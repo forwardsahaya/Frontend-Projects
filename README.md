@@ -1,6 +1,6 @@
 # Frontend-Projects
 **Repository URL:** 
-https://github.com/your-username/single-page-html-cv
+https://github.com/forwardsahaya/Frontend-Projects.git
 
 **Live Demo URL:**
 https://your-username.github.io/single-page-html-cv/
