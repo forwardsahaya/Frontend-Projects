@@ -1,111 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Forward Sahaya - Software Engineer</title>
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Single Page CV of Forward Sahaya, a Software Engineer." />
-    <meta name="keywords" content="Frontend Developer, HTML, CSS, JavaScript, Resume, Web Development" />
-    <meta name="author" content="Forward Sahaya" />
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Forward Sahaya - Software Engineer" />
-    <meta property="og:description" content="Single Page CV of Austin Hill, a Software Engineer." />
-    <meta property="og:image" content="https://res.cloudinary.com/duidrgg1k/image/upload/v1725421776/male-technologist_n0fbey.png" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://austinhill.dev" />
-    <!-- Favicon -->
-    <link rel="icon" href="https://austinhill.dev/favicon.ico" type="image/x-icon" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forward Sahaya – Software Engineer</title>
 
-  <body>
-    <header>
-      <h1>Forward Sahaya</h1>
-      <h2>Software Engineer</h2>
-      <div class="contact-info">
-        <address>
-          123 Avocado Street<br />
-          Sunshine, AZ 12345
-          <p>+255759712069</p>
-          <p>foardsahaya@gmail.com</p>
-        </address>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="CV of Forward Sahaya, Software Engineer specialising in React, TypeScript, and accessible front-end development." />
+  <meta name="keywords" content="software engineer, frontend engineer, React, TypeScript, JavaScript, HTML, CSS, CV, resume" />
+  <meta name="author" content="Forward Sahaya" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Forward Sahaya – Software Engineer" />
+  <meta property="og:description" content="CV of Forward Sahaya, Software Engineer specialising in React, TypeScript, and accessible front-end development." />
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://forwardsahaya.dev/cv" />
+  <meta property="og:image" content="https://forwardsahaya.dev/og-image.jpg" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Forward Sahaya – Software Engineer" />
+  <meta name="twitter:description" content="CV of Forward Sahaya, Software Engineer specialising in React, TypeScript, and accessible front-end development." />
+  <meta name="twitter:image" content="https://forwardsahaya.dev/og-image.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231a1a2e'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='18' font-family='serif' fill='%23e8c97e'>A</text></svg>" />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:     #1a1a2e;
+      --paper:   #f5f0e8;
+      --accent:  #c8914a;
+      --muted:   #7a7468;
+      --rule:    #d9d0c0;
+      --col-gap: 2.5rem;
+    }
+
+    html { font-size: 15px; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      line-height: 1.65;
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 3rem 2.5rem;
+      border: 1px solid var(--rule);
+    }
+
+    /* ── Header ── */
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      padding-bottom: 1.5rem;
+      border-bottom: 2px solid var(--ink);
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    header h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    header p.title {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+
+    address {
+      font-style: normal;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--muted);
+      text-align: right;
+      line-height: 1.9;
+    }
+
+    address a { color: var(--accent); text-decoration: none; }
+    address a:hover { text-decoration: underline; }
+
+    /* ── Layout ── */
+    .cv-grid {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 0 var(--col-gap);
+    }
+
+    /* ── Section Label (left column) ── */
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-top: 0.2rem;
+      padding-right: 1rem;
+      border-top: 1px solid var(--rule);
+      margin-top: 1.8rem;
+    }
+
+    /* ── Section Content (right column) ── */
+    .section-content {
+      border-top: 1px solid var(--rule);
+      margin-top: 1.8rem;
+      padding-top: 0.4rem;
+    }
+
+    /* ── Experience Entry ── */
+    article.entry {
+      margin-bottom: 1.4rem;
+    }
+
+    article.entry header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border: none;
+      padding: 0;
+      margin: 0 0 0.2rem;
+    }
+
+    article.entry h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    article.entry .period {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    article.entry .org {
+      font-style: italic;
+      color: var(--accent);
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+    }
+
+    article.entry p,
+    article.entry ul {
+      font-size: 0.9rem;
+      color: #3a3830;
+    }
+
+    article.entry ul {
+      padding-left: 1.1rem;
+      list-style: none;
+    }
+
+    article.entry ul li::before {
+      content: "–";
+      margin-right: 0.5rem;
+      color: var(--accent);
+    }
+
+    /* ── Education Entry ── */
+    .edu-entry {
+      margin-bottom: 1rem;
+    }
+
+    .edu-entry h3 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .edu-entry .school {
+      font-style: italic;
+      color: var(--accent);
+      font-size: 0.88rem;
+    }
+
+    .edu-entry .year {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--muted);
+    }
+
+    /* ── Skills ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.8rem 1.5rem;
+    }
+
+    .skill-group h4 {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .skill-group p {
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      color: var(--muted);
+      text-align: center;
+      letter-spacing: 0.06em;
+    }
+
+    @media print {
+      body { margin: 0; border: none; padding: 2rem; }
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 1.5rem 1.2rem; }
+      .cv-grid { grid-template-columns: 1fr; }
+      .section-label { margin-top: 1.4rem; border-top: none; color: var(--accent); }
+      header { grid-template-columns: 1fr; }
+      address { text-align: left; margin-top: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ HEADER ══ -->
+  <header>
+    <div>
+      <h1>Forward <em>Sahaya</em></h1>
+      <p class="title">Software Engineer</p>
+    </div>
+    <address>
+      Comfort Street, Dar es Salaam, AZ 12345<br />
+      <a href="tel:+255759712069">+255 759 712 069</a><br />
+      <a href="mailto:foardsahaya@gmail.com">foardsahaya@gmail.com</a>
+    </address>
+  </header>
+
+  <!-- ══ BODY GRID ══ -->
+  <div class="cv-grid">
+
+    <!-- ── EXPERIENCE ── -->
+    <p class="section-label">Experience</p>
+    <section class="section-content" aria-label="Career history">
+
+      <article class="entry">
+        <header>
+          <h3>Frontend Engineer</h3>
+          <span class="period">March 2022 – Present</span>
+        </header>
+        <p class="org">EIS Group · CA</p>
+        <ul>
+          <li>Delivering pixel-perfect implementations using React and TypeScript.</li>
+          <li>Collaborating with designers, backend engineers, and delivery managers to size and scope work.</li>
+          <li>Creating training materials and conducting onboarding sessions for new team members.</li>
+        </ul>
+        <p class="org" style="font-size:0.75rem; margin-top:0.4rem;">React · TypeScript · Jira · Figma · Design Systems · Enterprise Software</p>
+      </article>
+
+      <article class="entry">
+        <header>
+          <h3>Lead Instructor &amp; Developer</h3>
+          <span class="period">Aug 2019 – March 2022</span>
+        </header>
+        <p class="org">Home Labs &amp; Persevere · TN</p>
+        <ul>
+          <li>Led multiple developer teams in delivering software solutions to clients.</li>
+          <li>Coordinated with the company founder to strategise and execute on company deliverables.</li>
+          <li>Crafted and delivered curriculum assessments for a full-stack coding bootcamp.</li>
+        </ul>
+        <p class="org" style="font-size:0.75rem; margin-top:0.4rem;">JavaScript · React · Node.js · Express · MongoDB · Agile · Leadership · Mentoring</p>
+      </article>
+
+    </section>
+
+    <!-- ── EDUCATION ── -->
+    <p class="section-label">Education</p>
+    <section class="section-content" aria-label="Education">
+
+      <div class="edu-entry">
+        <h3>B.IT. Information Technology</h3>
+        <p class="school">National Institute of Transport (NIT)</p>
+        <p class="year">January 2019 – May 2023</p>
+        <p style="font-size:0.85rem; margin-top:0.25rem; color:#3a3830;">
+          Gained experience in software engineering by analysing and implementing software systems, developing object-oriented Java programs, and managing data using SQL.
+        </p>
       </div>
-    </header>
 
-    <main>
-      <section class="skills">
-        <h3 class="section-title">Skills</h3>
-        <p>
-          HTML, CSS, JavaScript, TypeScript, React, Agile Methodologies,
-          Accessibility, Figma, Git, Jira
-        </p>
-      </section>
+    </section>
 
-      <section class="education">
-        <h3 class="section-title">Education</h3>
-        <h4>National Institute of Transport, NIT - B.IT. Information Technology</h4>
-        <p>
-          January 2022 to May 2023<br />
-          I gained experience in software engineering by analyzing and
-          implementing software systems, developing object-oriented Java
-          programs, and effectively managing data using SQL.
-        </p>
-      </section>
-
-      <section class="experience">
-        <h3 class="section-title">Experience</h3>
-        <article>
-          <h4>EIS Group, CA - Frontend Engineer</h4>
-          <p>March 2022 to Present</p>
-          <ul>
-            <li>
-              Delivering pixel-perfect implementations using React and
-              TypeScript.
-            </li>
-            <li>
-              Collaborating with designers, backend engineers, and delivery
-              managers to size and scope work.
-            </li>
-            <li>
-              Create training materials and conduct training sessions to onboard
-              new team members.
-            </li>
-          </ul>
-          <p>
-            Skills: React, TypeScript, Jira, Figma, Design Systems, Enterprise
-            Software
-          </p>
-        </article>
-
-        <article>
-          <h4>Home Labs & Persevere, TN - Lead Instructor & Developer</h4>
-          <p>August 2019 - March 2022</p>
-          <ul>
-            <li>
-              Lead multiple teams of developers in delivering software solutions
-              to clients.
-            </li>
-            <li>
-              Coordinate with company founder to strategize and execute on
-              company deliverables.
-            </li>
-            <li>
-              Craft and deliver curriculum assessments for a full-stack coding
-              bootcamp.
-            </li>
-          </ul>
-          <p>
-            Skills: JavaScript, React, Node.js, Express, MongoDB, Agile
-            Methodologies, Leadership, Mentoring
-          </p>
-        </article>
-      </section>
-
-      <section class="internet">
-        <h3 class="section-title">Across the Internet</h3>
-        <a href="https://austinhill.dev">austinhill.dev</a><br />
-        <a href="https://www.linkedin.com/in/Forward-sahaya/">LinkedIn</a><br />
-      </section>
-    </main>
-  </body>
-</html>
+    <!-- ── SKILLS ── -->
+    <p class="section-label">Skills</p>
+    <section class="section-content" aria-label="Skills">
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h4>Languages &amp; Frameworks</h4>
+          <p>HTML, CSS, JavaScript, TypeScript, React</p>
+        </div>
+        <div class="skill-group">
+          <h4>Tools &amp; Platforms</h4>
+          <p>Figma, Git, Jira</p>
+        </div>
+        <div class="skill-group">
+          <h4>Practices</h4>
+          <p>Agile Methodologies, Accessibility (a11y)</p>
+        </div>
+        <div class="skill-group">
+          <h4>Soft Skills</h4>
+          <p>Leadership, Mentoring, Cross-functional collaboration, Curriculum design</p>
+        </div>
+      </div>
+    </section>
